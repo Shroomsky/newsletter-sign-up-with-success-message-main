@@ -1,14 +1,18 @@
 .app {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	color: var(----DarkSlateGrey);
 	font-weight: 400;
 	background-color: var(--White);
 	height: 100%;
 	padding: 0 2rem;
 }
+.app > section {
+	max-width: 450px;
+}
 
-@media (min-width: 1024px) {
+@media (min-width: 992px) {
 	.app {
 		position: absolute;
 		top: 50%;
@@ -23,7 +27,7 @@
 		gap: 20px;
 		border-radius: 25px;
 	}
-	.app section{
+	.app > section {
 		height: fit-content;
 		padding: 30px;
 	}

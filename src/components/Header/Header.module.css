@@ -1,6 +1,6 @@
 .header {
-	position: relative;
-	left: -2rem;
+	/* position: relative;
+	left: 0rem; */
 	background-image: url("../../assets/images/illustration-sign-up-mobile.svg");
 	width: 100vw;
 	height: 30vh;
