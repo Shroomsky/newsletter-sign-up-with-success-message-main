@@ -1,11 +1,10 @@
 import styles from "./App.module.css";
-
 import { ItemList } from "./components/ItemList/ItemList.jsx";
 import { Form } from "./components/Form/Form.jsx";
 import { Completed } from "./components/Completed/Completed.jsx";
 import { useState } from "react";
 import { Header } from "./components/Header/Header.jsx";
-import { HeadingInfo } from "./components/HeadingInfo/HeadingInfo";
+import { HeadingInfo } from "./components/HeadingInfo/HeadingInfo.jsx";
 
 export function App() {
 	const [completed, setCompleted] = useState(false);
