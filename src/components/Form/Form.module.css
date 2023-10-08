@@ -1,0 +1,38 @@
+.form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: start;
+	gap: 10px;
+	position: relative;
+	
+}
+.label {
+	color: currentColor;
+	font-weight: 700;
+}
+.input {
+	
+	padding: 10px;
+	width: 100%;
+	border: 1px solid var(--Grey);
+	border-radius: 5px;
+	margin-bottom: 10px;
+}
+
+.input:focus {
+	border: 1px solid black;
+}
+.error {
+	position: absolute;
+	right: 0;
+    top: 0;
+	font-weight: 700;
+	color: red;
+}
+.input_error{
+  background-color: rgb(255, 186, 186);
+  color: red;
+  border: 1px solid red;  
+}
+

@@ -1,0 +1,23 @@
+.header {
+	position: relative;
+	left: -2rem;
+	background-image: url("../../assets/images/illustration-sign-up-mobile.svg");
+	width: 100vw;
+	height: 30vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0 50%;
+	border: none;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+}
+@media (min-width: 992px) {
+	.header {
+		left: 0;
+		width: 600px;
+		height: 100%;
+		border-radius: 15px;
+		background-image: url("../../assets/images/illustration-sign-up-desktop.svg");
+	
+	}
+}

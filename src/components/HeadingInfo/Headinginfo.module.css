@@ -1,0 +1,15 @@
+.h1 {
+	font-size: 2.5rem;
+	margin-bottom: 0.7rem;
+}
+.p {
+	margin: 15px 0;
+}
+.info {
+	z-index: 100;
+}
+@media (min-width: 992px) {
+	.h1 {
+		font-size: 3rem;
+	}
+}
