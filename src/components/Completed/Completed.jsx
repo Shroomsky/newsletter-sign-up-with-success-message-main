@@ -1,5 +1,5 @@
 import CompIcon from "../../assets/images/icon-success.svg";
-import { Button } from "../button/button";
+import { Button } from "../Button/Button.jsx";
 import styles from "./Completed.module.css";
 export function Completed({ setCompleted, email }) {
 	function onClickHandler() {
@@ -16,7 +16,7 @@ export function Completed({ setCompleted, email }) {
 					<span className={styles.span}> {email}</span>. Please open it and
 					click the button inside to confirm your subscription.
 				</p>
-			<Button onClick={onClickHandler}>Dismiss message</Button>
+				<Button onClick={onClickHandler}>Dismiss message</Button>
 			</section>
 		</div>
 	);
