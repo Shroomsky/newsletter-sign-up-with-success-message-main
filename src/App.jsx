@@ -4,7 +4,7 @@ import { ItemList } from "./components/ItemList/ItemList.jsx";
 import { Form } from "./components/Form/Form.jsx";
 import { Completed } from "./components/Completed/Completed.jsx";
 import { useState } from "react";
-import { Header } from "./components/header/header";
+import { Header } from "./components/Header/Header.jsx";
 import { HeadingInfo } from "./components/HeadingInfo/HeadingInfo";
 
 export function App() {
