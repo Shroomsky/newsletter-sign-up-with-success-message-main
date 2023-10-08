@@ -22,7 +22,7 @@ export function Form({ setCompleted, setEmail }) {
 		<>
 			<form className={styles.form} onSubmit={submitHandler}>
 				{error && <p className={styles.error}>Valid email required</p>}
-				<label htmlFor="email">Email addres</label>
+				<label htmlFor="email">Email address</label>
 				<input
 					className={`${styles.input} ${error && styles.input_error}`}
 					id="email"
