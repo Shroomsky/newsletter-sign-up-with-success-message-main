@@ -28,8 +28,8 @@ Users should be able to:
 
 ### Screenshot
 
-![Mobile View](./newsletter-sing-up/public/Screenshot_1.png)
-![Desktop View](./newsletter-sing-up/public/Screenshot_2.png)
+![Mobile View](../public/Screenshot_1.png)
+![Desktop View](../public/Screenshot_2.png)
 
 ### Links
 
