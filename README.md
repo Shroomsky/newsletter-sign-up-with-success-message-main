@@ -44,6 +44,7 @@ Users should be able to:
 - Flexbox
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
+- [useReducer](https://react.dev/learn/extracting-state-logic-into-a-reducer) useReducer Hook. 
 
 ## Author
 
