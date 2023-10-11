@@ -1,23 +1,48 @@
-import styles from "./App.module.css";
+import { useReducer } from "react";
 import { ItemList } from "./components/ItemList/ItemList.jsx";
 import { Form } from "./components/Form/Form.jsx";
 import { Completed } from "./components/Completed/Completed.jsx";
-import { useState } from "react";
 import { Header } from "./components/Header/Header.jsx";
 import { HeadingInfo } from "./components/HeadingInfo/HeadingInfo.jsx";
+import { appReducer } from "./utilities/appReducer";
+import { emailCheck } from "./utilities/emailCheck";
+import styles from "./App.module.css";
 
 export function App() {
-	const [completed, setCompleted] = useState(false);
-	const [email, setEmail] = useState("");
+	const initialAppObj = { email: "", error: false, completed: false };
+
+	const [AppObj, dispatch] = useReducer(appReducer, initialAppObj);
+
 	const items = [
 		"Product discovery and building what matters",
 		"Measuring to ensure updates are a success",
 		"And much more!",
 	];
 
+	function onDismissMessageClick() {
+		dispatch({
+			type: "dismiss_mesage",
+			email: "",
+		});
+	}
+
+	function sumbitHandlerRedus(text) {
+		if (emailCheck(text)) {
+			dispatch({
+				type: "submit",
+				email: text,
+			});
+		} else {
+			dispatch({
+				type: "submit_error",
+				email: text,
+			});
+		}
+	}
+
 	return (
 		<>
-			{!completed && (
+			{!AppObj.completed && (
 				<div className={styles.app}>
 					<Header />
 					<section>
@@ -25,11 +50,13 @@ export function App() {
 							heading="Stay updated!"
 							text="Join 60,000+ product managers receiving monthly updates on:"></HeadingInfo>
 						<ItemList items={items} />
-						<Form setCompleted={setCompleted} setEmail={setEmail} />
+						<Form sumbitHandlerRedus={sumbitHandlerRedus} AppObj={AppObj} />
 					</section>
 				</div>
 			)}
-			{completed && <Completed setCompleted={setCompleted} email={email} />}
+			{AppObj.completed && (
+				<Completed setCompleted={onDismissMessageClick} AppObj={AppObj} />
+			)}
 		</>
 	);
 }

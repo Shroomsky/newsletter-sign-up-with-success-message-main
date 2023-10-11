@@ -1,30 +1,21 @@
 import { useState } from "react";
 import { Button } from "../Button/Button.jsx";
 import styles from "./Form.module.css";
-import { emailCheck } from "../../utilities/emailCheck.js";
 
-export function Form({ setCompleted, setEmail }) {
+export function Form({ AppObj, sumbitHandlerRedus }) {
 	const [text, setText] = useState("");
-	const [error, setError] = useState(false);
-
-	function submitHandler(e) {
-		e.preventDefault();
-		if (emailCheck(text)) {
-			setEmail(text);
-			setCompleted(true);
-			setError(false);
-		} else {
-			setError(true);
-		}
-	}
-
 	return (
 		<>
-			<form className={styles.form} onSubmit={submitHandler}>
-				{error && <p className={styles.error}>Valid email required</p>}
+			<form
+				className={styles.form}
+				onSubmit={(e) => {
+					e.preventDefault();
+					sumbitHandlerRedus(text);
+				}}>
+				{AppObj.error && <p className={styles.error}>Valid email required</p>}
 				<label htmlFor="email">Email address</label>
 				<input
-					className={`${styles.input} ${error && styles.input_error}`}
+					className={`${styles.input} ${AppObj.error && styles.input_error}`}
 					id="email"
 					type="text"
 					autoComplete="off"
